@@ -25,6 +25,12 @@ A cross-platform system update checker and notifier with automated scheduling op
 - Cron job ready
 - Comprehensive logging
 
+## Usage
+
+### 🔧 For Most Users (Recommended)
+Use the Python script - it works on both Windows and Linux:
+you don't need to run both scripts-choose the one that fits your needs!
+
 ## Installation
 
 ### Quick Start
