@@ -9,6 +9,13 @@ A cross-platform Python script that automatically checks for and installs system
 - ✅ **Logging**: Detailed log files
 - ✅ **Automatic Cleanup**: Removes unnecessary packages
 
+## Installation
+No installation required! This script uses only built-in system tools.
+
 ## Usage
 ```bash
+# Linux
 python3 src/updater.py
+
+# Windows  
+python src/updater.py
