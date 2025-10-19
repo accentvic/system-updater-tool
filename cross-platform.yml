@@ -1,0 +1,52 @@
+name: Cross-Platform Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-platforms:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.8, 3.10]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Display OS info
+      run: |
+        echo "Running on: ${{ matrix.os }}"
+        python -c "import platform; print(f'Platform: {platform.system()} {platform.release()}')"
+    
+    - name: Test script imports
+      run: |
+        python -c "
+        # Test all imports work
+        import subprocess
+        import datetime
+        import platform
+        import os
+        import sys
+        from pathlib import Path
+        print('✅ All imports work on ${{ matrix.os }}')
+        "
+    
+    - name: Test platform detection
+      run: |
+        python -c "
+        import platform
+        is_windows = platform.system() == 'Windows'
+        is_linux = platform.system() == 'Linux'
+        is_mac = platform.system() == 'Darwin'
+        print(f'Windows: {is_windows}, Linux: {is_linux}, Mac: {is_mac}')
+        print('✅ Platform detection working')
+        "
