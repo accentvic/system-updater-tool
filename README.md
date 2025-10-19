@@ -28,8 +28,8 @@ A cross-platform system update checker and notifier with automated scheduling op
 ## Usage
 
 ### 🔧 For Most Users (Recommended)
-Use the Python script - it works on both Windows and Linux:
-you don't need to run both scripts-choose the one that fits your needs!
+Use the Python script - it works on both Windows.
+You don't need to run both scripts-choose the one that fits your needs!
 
 ## Installation
 
