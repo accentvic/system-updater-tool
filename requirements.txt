@@ -27,8 +27,3 @@
 # This tool uses only built-in system utilities and
 # Python standard library modules for maximum portability.
 
-## Optional for Enhanced Features:
-# For future versions, consider adding:
-# - requests>=2.28.0         # HTTP requests for online checks
-# - psutil>=5.9.0            # System monitoring
-# - click>=8.0.0             # Better CLI interface
