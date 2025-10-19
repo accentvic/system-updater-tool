@@ -35,3 +35,20 @@ cd system-updater-tool
 
 # Make scripts executable
 chmod +x scripts/update-apps.sh
+
+#usage
+# Manual check with user interaction
+python3 src/updater.py
+
+# Auto mode (for cron jobs)
+python3 src/updater.py --auto
+
+# Integrate with existing systems
+python3 src/updater.py --integrate
+
+#Bash script
+# Run the complete update cycle
+./scripts/update-apps.sh
+
+# Schedule daily automation (2 PM)
+echo "0 14 * * * $(pwd)/scripts/update-apps.sh" | crontab -
